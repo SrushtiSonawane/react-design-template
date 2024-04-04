@@ -1,14 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import "./App.css"
 import { Route, BrowserRouter, Routes } from "react-router-dom";
-import Footer from "./components/Footer";
+import Header from "./components/Header";
 import Home from "./components/Home";
 import Photos from "./components/photos/Photos";
-import Posts from "./components/posts/Posts";
+import Posts from "./Posts";
 import Users from "./components/users/Users";
-import Header from "./components/Header";
+
+import Footer from "./components/footer/Footer";
+
 
 export default function App() {
+  
   return (
     <div className="wrapper">
     <BrowserRouter>

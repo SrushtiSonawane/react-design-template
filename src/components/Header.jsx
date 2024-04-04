@@ -4,12 +4,12 @@ import { Link } from "react-router-dom";
 function Header() {
   const myStyle = {
     color: "white",
-    backgroundColor: "#638889",
+    backgroundColor: "#c89f9c",
     fontFamily: "Sans-Serif",
     display: "flex",
     justifyContent: "end",
     alignItems: "center",
-    border: "2px solid grey",
+    border: "0px solid grey",
     width: "100%",
     position: "fixed",
     padding: "10px",
@@ -30,10 +30,10 @@ function Header() {
           Home
         </Link>
         <Link style={new1} to="/posts">
-          posts
+          Posts
         </Link>
         <Link style={new1} to="/photos">
-          photos
+          Photos
         </Link>
         <Link style={new1} to="/users">
           Users
