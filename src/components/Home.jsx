@@ -1,36 +1,17 @@
 import React from 'react';
+import video1 from "../assets/background-video.mp4";
 
 function Home() {
   return (
     <section style={styles.videoContainer}>
-      <video autoPlay loop muted style={styles.video}>
-        
-        <video src="background-video.mp4" type="video/mp4"></video>
+      <video loop autoPlay style={styles.video}>
+        <source src={require('../assets/background-video.mp4')} type="video/mp4" />
       </video>
-      <div style={styles.content}>
-        <h1 style={{
-          color:"black",
-          fontsize:"70px"
-      }}
-      >SCHOOL ART SHOW</h1>
-        <h4 style={{
-          color:"blue",
-          fontsize:"40px",
-        }}
-        >APRIL 31st - PICASSO GALLERY HALL</h4>
-        <p style={{
-          color:"black",
-          fontsize:"40px",
 
-      }}>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ad iusto culpa amet eum maiores ullam, aspernatur fugit incidunt voluptas, quasi quam voluptatem error provident, architecto quaerat aperiam quibusdam mollitia quia.</p>
-        <button style={{
-          
-          width:"300px",
-          height:"150px",
-          fontSize:"50px",
-          backgroundColor:"blue",
-          color:"white",
-        }}>REGISTER NOW</button>
+      <div style={styles.content}>
+        <h1 style={styles.heading}>SCHOOL ART SHOW</h1>
+        <h4 style={styles.subHeading}>APRIL 31st - PICASSO GALLERY HALL</h4>
+        <button style={styles.button}>REGISTER NOW</button>
       </div>
     </section>
   );
@@ -42,6 +23,7 @@ const styles = {
     width: '100%',
     height: '100vh',
     overflow: 'hidden',
+    
   },
   video: {
     position: 'absolute',
@@ -60,6 +42,31 @@ const styles = {
     textAlign: 'center',
     color: '#fff',
     padding: '20px',
+  },
+  heading: {
+    color: 'white',
+    fontSize: '70px',
+    fontFamily: 'Arial, sans-serif', 
+    textShadow: '2px 2px 4px rgba(0,0,0,0.5)', 
+  },
+  subHeading: {
+    color: '#FFD700',
+    fontSize: '40px',
+    fontFamily: 'Arial, sans-serif', 
+    textShadow: '2px 2px 4px rgba(0,0,0,0.5)', 
+  },
+  button: {
+    width: '200px',
+    height: '80px',
+    fontSize: '25px',
+    backgroundColor: '#c89f9c',
+    color: 'white',
+    border: 'none',
+    borderRadius: '10px',
+    marginTop: '20px',
+    cursor: 'pointer',
+    fontFamily: 'Arial, sans-serif', 
+    boxShadow: '0px 4px 8px rgba(0,0,0,0.3)', 
   },
 };
 
