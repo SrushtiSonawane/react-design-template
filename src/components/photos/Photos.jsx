@@ -21,7 +21,7 @@ export default function Photos() {
   const styles = {
     postContainer: {
       display: 'grid',
-      gridTemplateColumns: `repeat(3, 1fr)`,
+      gridTemplateColumns: `repeat(4, 1fr)`,
       gridAutoRows: 'min-content',
       gap: "15px",
       padding: "10px",
