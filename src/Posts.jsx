@@ -2,15 +2,18 @@ import React, { useEffect, useState } from "react";
 
 export default function Post() {
   const [posts, setPosts] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     fetch("https://jsonplaceholder.typicode.com/posts")
       .then((response) => response.json())
       .then((data) => {
         setPosts(data);
+        setLoading(false); 
       })
       .catch((error) => {
         console.log("error:", error);
+        setLoading(false); 
       });
   }, []);
 
@@ -45,14 +48,18 @@ export default function Post() {
 
   return (
     <div>
-      <div style={styles.postContainer}>
-        {posts.map((post) => (
-          <div key={post.id} style={{ ...styles.post, backgroundColor: colors[0] }}>
-            <h1 className="postTitle"><strong>Title: </strong>{post.title}</h1>
-            <p style={styles.postBody}>{post.body}</p>
-          </div>
-        ))}
-      </div>
+      {loading ? (
+        <div style={{color:"black", fontSize:"25px"}}>Loading...</div>
+      ) : (
+        <div style={styles.postContainer}>
+          {posts.map((post) => (
+            <div key={post.id} style={{ ...styles.post, backgroundColor: colors[0] }}>
+              <h1 className="postTitle"><strong>Title: </strong>{post.title}</h1>
+              <p style={styles.postBody}>{post.body}</p>
+            </div>
+          ))}
+        </div>
+      )}
     </div>
   );
 }
